@@ -22,3 +22,13 @@ Vector2D Vector2D::toOrigin(void) const {
     );
     return Vector2D(newTip);
 }
+
+Vector2D Vector2D::getPerpendicularVector(const Line &r) {
+    Fixed a = r.getAngularCoefficient();
+    Fixed b = r.getLinearCoefficient();
+    Fixed root = Fixed(-1)*b/a;
+    Fixed xPerpendicular = (root * b * b) / (root * root + b * b);
+    Fixed yPerpendicular = a*xPerpendicular + b;
+
+    return Vector2D(Dot(xPerpendicular, yPerpendicular));
+}
