@@ -13,6 +13,7 @@ class Vector2D : public Line {
         Vector2D(const Dot&, const Dot&);
         Dot getTip(void) const;
         Dot getTail(void) const;
+        Vector2D toOrigin(void) const;
 };
 
 #endif
