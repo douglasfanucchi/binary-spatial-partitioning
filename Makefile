@@ -3,7 +3,8 @@ NAME=executable
 FILES:=Fixed/Fixed.cpp elements/Dot.cpp elements/Line.cpp
 FILES:=$(addprefix src/, $(FILES))
 OBJS:=$(FILES:%.cpp=%.o)
-TEST_FILES:= asserts.cpp unit/example.cpp unit/elements/Dot.cpp unit/elements/Line.cpp
+TEST_FILES:= asserts.cpp unit/example.cpp unit/elements/Dot.cpp unit/elements/Line.cpp \
+			 unit/elements/Vector2D.cpp
 TEST_FILES:=$(addprefix tests/, $(TEST_FILES))
 TEST_OBJS:=$(TEST_FILES:%.cpp=%.o)
 INCLUDES=-I includes/
