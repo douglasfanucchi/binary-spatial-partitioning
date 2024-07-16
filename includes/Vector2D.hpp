@@ -10,6 +10,7 @@ class Vector2D : public Line {
 
     public:
         Vector2D(const Dot&);
+        Vector2D(const Dot&, const Dot&);
         Dot getTip(void) const;
         Dot getTail(void) const;
 };
