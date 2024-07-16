@@ -40,3 +40,7 @@ Fixed Vector2D::operator*(const Vector2D &v) const {
     return vOrigin.getTip().getAbscissa() * thisOrigin.getTip().getAbscissa() +
            vOrigin.getTip().getOrdinates() * thisOrigin.getTip().getOrdinates();
 }
+
+Fixed Vector2D::operator*(const Dot &p) const {
+    return (*this) * Vector2D(p);
+}
