@@ -3,6 +3,8 @@
 
 #include <Fixed.hpp>
 
+#define ORIGIN Dot(Fixed(0), Fixed(0))
+
 class Dot {
     private:
         const Fixed x, y;
