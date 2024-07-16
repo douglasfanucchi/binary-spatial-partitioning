@@ -32,3 +32,11 @@ Vector2D Vector2D::getPerpendicularVector(const Line &r) {
 
     return Vector2D(Dot(xPerpendicular, yPerpendicular));
 }
+
+Fixed Vector2D::operator*(const Vector2D &v) const {
+    Vector2D thisOrigin = this->toOrigin();
+    Vector2D vOrigin = v.toOrigin();
+
+    return vOrigin.getTip().getAbscissa() * thisOrigin.getTip().getAbscissa() +
+           vOrigin.getTip().getOrdinates() * thisOrigin.getTip().getOrdinates();
+}
