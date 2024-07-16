@@ -15,6 +15,7 @@ class Vector2D : public Line {
         Dot getTail(void) const;
         Vector2D toOrigin(void) const;
         static Vector2D getPerpendicularVector(const Line&);
+        Fixed operator*(const Vector2D&) const;
 };
 
 #endif
