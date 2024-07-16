@@ -4,6 +4,9 @@
 #include <Fixed.hpp>
 
 class Dot {
+    private:
+        const Fixed x, y;
+
     public:
         Dot(const Fixed&, const Fixed&);
         Fixed getAbscissa(void) const;
