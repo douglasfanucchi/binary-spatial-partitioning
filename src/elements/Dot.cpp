@@ -9,3 +9,8 @@ Fixed Dot::getAbscissa(void) const {
 Fixed Dot::getOrdinates(void) const {
     return this->y;
 }
+
+bool Dot::operator==(const Dot &p) const {
+    return p.getAbscissa() == this->getAbscissa()
+        && p.getOrdinates() == this->getOrdinates();
+}

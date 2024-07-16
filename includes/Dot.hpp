@@ -11,6 +11,7 @@ class Dot {
         Dot(const Fixed&, const Fixed&);
         Fixed getAbscissa(void) const;
         Fixed getOrdinates(void) const;
+        bool operator==(const Dot&) const;
 };
 
 #endif
