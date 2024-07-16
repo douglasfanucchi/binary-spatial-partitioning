@@ -13,3 +13,12 @@ Dot Vector2D::getTip(void) const {
 Dot Vector2D::getTail(void) const {
     return this->tail;
 }
+
+Vector2D Vector2D::toOrigin(void) const {
+    Dot tip = this->getTip(), tail = this->getTail();
+    Dot newTip = Dot(
+        Fixed(tip.getAbscissa() - tail.getAbscissa()),
+        Fixed(tip.getOrdinates() - tail.getOrdinates())
+    );
+    return Vector2D(newTip);
+}
