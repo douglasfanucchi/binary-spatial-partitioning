@@ -3,5 +3,6 @@
 
 void RUN_EXAMPLE_SUITE();
 void RUN_DOT_TEST_SUITE();
+void RUN_LINE_TEST_SUITE();
 
 #endif
