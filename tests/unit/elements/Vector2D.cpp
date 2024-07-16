@@ -59,6 +59,16 @@ void test_should_compute_a_dot_product()
     ASSERT_EQ(0, result.getRawBits());
 }
 
+void test_should_compute_a_dot_product_between_vectors_that_are_not_at_origin()
+{
+    Vector2D v(Dot(Fixed(-10), Fixed(11)), Dot(Fixed(-6), Fixed(3)));
+    Vector2D w(Dot(Fixed(16), Fixed(6)), Dot(Fixed(-4), Fixed(-4)));
+
+    Fixed result = v * w;
+
+    ASSERT_EQ(0, result.getRawBits());
+}
+
 void RUN_2D_VECTOR_TEST_SUITE()
 {
     test_should_create_a_vector_located_at_origin();
@@ -66,4 +76,5 @@ void RUN_2D_VECTOR_TEST_SUITE()
     test_should_translate_vectors_to_origin();
     test_should_get_perpendicular_vector_to_a_line();
     test_should_compute_a_dot_product();
+    test_should_compute_a_dot_product_between_vectors_that_are_not_at_origin();
 }
