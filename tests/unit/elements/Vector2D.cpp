@@ -38,9 +38,21 @@ void test_should_translate_vectors_to_origin()
     ASSERT_TRUE(w_origin.getTail() == Dot(Fixed(0), Fixed(0)));
 }
 
+void test_should_get_perpendicular_vector_to_a_line()
+{
+    Dot p1(Fixed(-20), Fixed(0));
+    Dot p2(Fixed(0), Fixed(10));
+
+    Vector2D v = Vector2D::getPerpendicularVector(Line(p1, p2));
+
+    ASSERT_TRUE(v.getTip() == Dot(Fixed(-4), Fixed(8)));
+    ASSERT_TRUE(v.getTail() == ORIGIN);
+}
+
 void RUN_2D_VECTOR_TEST_SUITE()
 {
     test_should_create_a_vector_located_at_origin();
     test_should_create_a_vector_that_isnt_located_at_origin();
     test_should_translate_vectors_to_origin();
+    test_should_get_perpendicular_vector_to_a_line();
 }
