@@ -1,6 +1,6 @@
 NAME=executable
 
-FILES:=Fixed/Fixed.cpp elements/Dot.cpp
+FILES:=Fixed/Fixed.cpp elements/Dot.cpp elements/Line.cpp
 FILES:=$(addprefix src/, $(FILES))
 OBJS:=$(FILES:%.cpp=%.o)
 TEST_FILES:= asserts.cpp unit/example.cpp unit/elements/Dot.cpp unit/elements/Line.cpp
