@@ -19,7 +19,7 @@ class Fixed
         Fixed(int number);
         Fixed(double number);
         ~Fixed(void);
-        Fixed &operator=(Fixed &fixed);
+        Fixed &operator=(const Fixed &fixed);
         bool operator>(const Fixed &toBeCompared) const;
         bool operator<(const Fixed &toBeCompared) const;
         bool operator==(const Fixed &toBeCompared);

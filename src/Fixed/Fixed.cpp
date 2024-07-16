@@ -26,7 +26,7 @@ void Fixed::setRawBits(int const raw) {
     _raw = raw;
 }
 
-Fixed &Fixed::operator=(Fixed &fixed) {
+Fixed &Fixed::operator=(const Fixed &fixed) {
     this->setRawBits(fixed.getRawBits());
 
     return *this;
