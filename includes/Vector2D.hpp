@@ -4,7 +4,7 @@
 #include <Dot.hpp>
 #include <Line.hpp>
 
-class Vector2D : public Line {
+class Vector2D {
     private:
         Dot tip, tail;
 
