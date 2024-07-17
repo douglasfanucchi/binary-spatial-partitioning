@@ -1,6 +1,6 @@
 #include <Line.hpp>
 
-Line::Line(const Dot &p1, const Dot &p2) {
+Line::Line(const Dot &p1, const Dot &p2) : p1(p1), p2(p2) {
     Fixed dy(p1.getOrdinates() - p2.getOrdinates());
     Fixed dx(p1.getAbscissa() - p2.getAbscissa());
 
@@ -26,6 +26,15 @@ bool Line::isFunction(void) const {
 }
 
 Vector2D Line::getPerpendicularVector(void) const {
+    if (!this->isFunction()) {
+        Fixed x = this->p1.getAbscissa();
+        return Vector2D(
+            Dot(
+                Fixed(x),
+                Fixed(0)
+            )
+        );
+    }
     Fixed a = this->getAngularCoefficient();
     Fixed b = this->getLinearCoefficient();
     Fixed root = Fixed(-1)*b/a;

@@ -8,6 +8,7 @@
 class Line {
     private:
         Fixed a, b;
+        Dot p1, p2;
         bool _isFunction;
     public:
         Line(const Dot&, const Dot&);
