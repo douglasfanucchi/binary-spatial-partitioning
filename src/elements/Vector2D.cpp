@@ -33,3 +33,7 @@ Fixed Vector2D::operator*(const Vector2D &v) const {
 Fixed Vector2D::operator*(const Dot &p) const {
     return (*this) * Vector2D(p);
 }
+
+bool Vector2D::operator>(const Vector2D &v) const {
+    return (*this) * (*this) > v * v;
+}
