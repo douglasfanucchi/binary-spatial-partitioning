@@ -2,7 +2,6 @@
 # define VECTOR_2D_H
 
 #include <Dot.hpp>
-#include <Line.hpp>
 
 class Vector2D {
     private:
@@ -14,7 +13,6 @@ class Vector2D {
         Dot getTip(void) const;
         Dot getTail(void) const;
         Vector2D toOrigin(void) const;
-        static Vector2D getPerpendicularVector(const Line&);
         Fixed operator*(const Vector2D&) const;
         Fixed operator*(const Dot&) const;
 };

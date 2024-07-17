@@ -3,6 +3,7 @@
 
 #include <Dot.hpp>
 #include <Fixed.hpp>
+#include <Vector2D.hpp>
 
 class Line {
     private:
@@ -13,6 +14,7 @@ class Line {
         Fixed getAngularCoefficient(void) const;
         Fixed getLinearCoefficient(void) const;
         bool isFunction(void) const;
+        Vector2D getPerpendicularVector(void) const;
 };
 
 #endif
