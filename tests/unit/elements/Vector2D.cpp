@@ -68,6 +68,18 @@ void test_should_compute_dot_product_between_a_dot_and_vector()
     ASSERT_EQ(0, result.getRawBits());
 }
 
+void test_should_compare_two_vectors_size_as_greater_than()
+{
+    Vector2D v(Dot(Fixed(3), Fixed(4)));
+    Vector2D w(Dot(Fixed(1), Fixed(0)));
+    bool result = v > w;
+    ASSERT_TRUE(result);
+
+    Vector2D u = Vector2D(Dot(Fixed(-1), Fixed(0)));
+    result = u > w;
+    ASSERT_FALSE(result);
+}
+
 void RUN_2D_VECTOR_TEST_SUITE()
 {
     test_should_create_a_vector_located_at_origin();
@@ -76,4 +88,5 @@ void RUN_2D_VECTOR_TEST_SUITE()
     test_should_compute_a_dot_product();
     test_should_compute_a_dot_product_between_vectors_that_are_not_at_origin();
     test_should_compute_dot_product_between_a_dot_and_vector();
+    test_should_compare_two_vectors_size_as_greater_than();
 }

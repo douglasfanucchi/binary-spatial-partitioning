@@ -15,6 +15,7 @@ class Vector2D {
         Vector2D toOrigin(void) const;
         Fixed operator*(const Vector2D&) const;
         Fixed operator*(const Dot&) const;
+        bool operator>(const Vector2D&) const;
 };
 
 #endif
