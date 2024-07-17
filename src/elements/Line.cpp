@@ -24,3 +24,13 @@ Fixed Line::getLinearCoefficient(void) const {
 bool Line::isFunction(void) const {
     return this->_isFunction;
 }
+
+Vector2D Line::getPerpendicularVector(void) const {
+    Fixed a = this->getAngularCoefficient();
+    Fixed b = this->getLinearCoefficient();
+    Fixed root = Fixed(-1)*b/a;
+    Fixed xPerpendicular = (root * b * b) / (root * root + b * b);
+    Fixed yPerpendicular = a*xPerpendicular + b;
+
+    return Vector2D(Dot(xPerpendicular, yPerpendicular));
+}
