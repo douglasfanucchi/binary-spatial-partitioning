@@ -37,9 +37,22 @@ void test_should_get_perpendicular_vector()
     ASSERT_TRUE(v.getTail() == ORIGIN);
 }
 
+void test_should_get_perpendicular_vector_to_a_line_parallel_to_y_axis()
+{
+    Dot p1(Fixed(1), Fixed(10));
+    Dot p2(Fixed(1), Fixed(5));
+    Line line(p1, p2);
+
+    Vector2D v = line.getPerpendicularVector();
+
+    ASSERT_TRUE(v.getTip() == Dot(Fixed(1), Fixed(0)));
+    ASSERT_TRUE(v.getTail() == ORIGIN);
+}
+
 void RUN_LINE_TEST_SUITE()
 {
     test_should_create_line();
     test_should_create_line_parallel_to_y_axis();
     test_should_get_perpendicular_vector();
+    test_should_get_perpendicular_vector_to_a_line_parallel_to_y_axis();
 }
